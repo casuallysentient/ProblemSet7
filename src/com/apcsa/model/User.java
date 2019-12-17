@@ -106,7 +106,9 @@ public class User {
      */
 
     public boolean isAdministrator() {
-        return accountType.equals("administrator");
+        if (accountType == "administrator") {
+            return accountType.equals("administrator");
+        }
     }
 
     /**
@@ -114,7 +116,9 @@ public class User {
      */
 
     public boolean isTeacher() {
-        return accountType.equals("teacher");
+        if (accountType == "teacher") {
+            return accountType.equals("teacher");
+        }
     }
 
     /**
@@ -122,6 +126,8 @@ public class User {
      */
 
     public boolean isStudent() {
-        return accountType.equals("student");
+        if (accountType == "student") {
+            return accountType.equals("student");
+        }
     }
 }
