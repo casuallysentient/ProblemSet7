@@ -106,7 +106,7 @@ else {
 
 
     public boolean requestSelectionLoop(User user) {
-    	if (user.isAdministrator()) {
+    	if (user.isAdministrator()) { //presents options available if administrator is logged in
     		switch(getAdminSelection()) {
     			case FACULTY:
     				((Administrator) user).viewFaculty();
@@ -131,7 +131,7 @@ else {
     		}
     	}
 
-      else if (user.isTeacher()) {
+      else if (user.isTeacher()) { //presents options available if teacher is logged in
     		switch(getTeacherSelection()) {
 				case ENROLLMENT:
 					((Teacher) user).enrollment(in);
@@ -153,7 +153,7 @@ else {
 			}
     	}
 
-      else if (user.isStudent()) {
+      else if (user.isStudent()) { //presents options available if student is logged in
     		switch(getStudentSelection()) {
     			case GRADES:
     				((Student) user).viewCourseGrades();
@@ -170,7 +170,7 @@ else {
     		}
     	}
 
-      else if (user.isRoot()) {
+      else if (user.isRoot()) { //presents options available if root is logged in
 
     	}
 
