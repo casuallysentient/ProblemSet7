@@ -4,8 +4,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+import java.sql.Connection; //enables the program to connect to the database and access information from it
+import java.sql.PreparedStatement; //enables the program to create pre-compiled SQL statements - especially important for this because it must regularly add and delete information from the database
 import java.sql.ResultSet;//a table of data created out of specified selected parts of a database
 import java.sql.SQLException;//signals the failure of a SQL operation
 import java.util.ArrayList; //a resizeable array that can be used to store an uncertain number of objects, which is not natively available in java
