@@ -117,16 +117,16 @@ else {
     			case STUDENT: //allows the administrator to view a full list of all students registered in powerschool
     				((Administrator) user).viewStudentEnrollment();
     				return true;
-    			case STUDENTBYGRADE:
+    			case STUDENTBYGRADE: //allows the administrator to select a specific grade and then see which students registered in powerschool are in that grade
     				((Administrator) user).viewStudentEnrollmentByGrade(in);
     				return true;
-    			case STUDENTBYCOURSE:
+    			case STUDENTBYCOURSE: //allows the administrator to select a specific course and then see which students are registered in that course
     				((Administrator) user).viewStudentEnrollmentByCourse(in);
     				return true;
-    			case PASSWORD:
+    			case PASSWORD: //allows the administrator to change their password
     				((Administrator) user).changePassword(in);
     				return true;
-    			case LOGOUT:
+    			case LOGOUT: //allows the administrator to log out
     				return false;
     		}
     	}
