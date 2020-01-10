@@ -10,8 +10,8 @@ import java.sql.DriverManager; //enables the program to load JDBC drivers
 import java.sql.PreparedStatement; //enables the program to create pre-compiled SQL statements - especially important for this because it must regularly add and delete information from the database
 import java.sql.ResultSet; //a table of data created out of specified selected parts of a database
 import java.sql.SQLException; //signals the failure of a SQL operation
-import java.sql.Statement;
-import java.sql.Timestamp;
+import java.sql.Statement; //used to execute a static SQL statement
+import java.sql.Timestamp; //allows the JDBC API to recognize java dates as SQL TIMESTAMP values
 import java.util.ArrayList;
 import java.util.Date;
 import com.apcsa.controller.Utils;
