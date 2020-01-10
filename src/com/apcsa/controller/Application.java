@@ -193,7 +193,7 @@ else {
 				output = in.nextInt();
 			}
       catch (InputMismatchException e) {
-				System.out.println("\nYour input was invalid. Please try again.\n");
+				System.out.println("\nYour input was invalid. Please try again.\n");//returned when the administrator either enters a number that is not included in their available actions or something that is not a valid format for an option (i.e., not a number)
 			}
 
 			in.nextLine(); //creates an input field where the administrator can select which option they would like to use
@@ -237,7 +237,7 @@ else {
 				output = in.nextInt();
 			}
       catch (InputMismatchException e) {
-				System.out.println("\nYour input was invalid. Please try again.\n");
+				System.out.println("\nYour input was invalid. Please try again.\n");//returned when the student either enters a number that is not included in their available actions or something that is not a valid format for an option (i.e., not a number)
 			}
 
 			in.nextLine(); //creates an input field where the student can select which option they would like to use
