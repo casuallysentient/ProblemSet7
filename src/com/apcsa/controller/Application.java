@@ -161,10 +161,10 @@ else {
     			case GRADESBYCOURSE://allows student to enter a specific course and see their assignment grades in that course
     				((Student) user).viewAssignmentGradesByCourse(in);
     				return true;
-    			case PASSWORD:
+    			case PASSWORD://allows student to change their password
     				((Student) user).changePassword(in);
     				return true;
-    			case LOGOUT:
+    			case LOGOUT://allows student to log out
     				return false;
 
     		}
