@@ -275,9 +275,9 @@ else {
                 output = in.nextInt();
 			}
       catch (InputMismatchException e) {
-				System.out.println("\nYour input was invalid. Please try again.\n");
+				System.out.println("\nYour input was invalid. Please try again.\n"); //returned when the teacher either enters a number that is not included in their available actions or something that is not a valid format for an option (i.e., not a number)
 			}
-            in.nextLine();
+            in.nextLine(); //creates an input field where the teacher can select which option they would like to use
 		}
      while (output > 6 || output < 1);
 
