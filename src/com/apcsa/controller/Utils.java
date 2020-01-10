@@ -10,8 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.Scanner;
-import com.apcsa.data.PowerSchool;
+import java.util.Scanner; //allows program to accept user input
+import com.apcsa.data.PowerSchool; //imports data from powerschool file so the objects created elsewhere can be used here
 
 
 

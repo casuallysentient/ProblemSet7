@@ -23,7 +23,7 @@ import com.apcsa.model.User;
 public class PowerSchool {
 
     private final static String PROTOCOL = "jdbc:sqlite:";
-    private final static String DATABASE_URL = "data/powerschool.db";
+    private final static String DATABASE_URL = "data/powerschool.db";//defines path to database
 
     /**
      * Initializes the database if needed (or if requested).
