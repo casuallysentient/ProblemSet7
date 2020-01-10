@@ -12,8 +12,8 @@ public class Application {
 
   enum RootAction { PASSWORD, DATABASE, LOGOUT, SHUTDOWN } //gives access to certain actions that the root account is allowed to use
   enum StudentAction { GRADES, GRADESBYCOURSE, PASSWORD, LOGOUT } //gives access to certain actions that students are allowed to use
-	enum AdminAction { FACULTY, FACULTYBYDEPT, STUDENT, STUDENTBYGRADE, STUDENTBYCOURSE, PASSWORD, LOGOUT }
-	enum TeacherAction { ENROLLMENT, AASSIGNMENT, DASSIGNMENT, ENTERGRADE, PASSWORD, LOGOUT}
+	enum AdminAction { FACULTY, FACULTYBYDEPT, STUDENT, STUDENTBYGRADE, STUDENTBYCOURSE, PASSWORD, LOGOUT } //gives access to certain actions that administrators are allowed to use
+	enum TeacherAction { ENROLLMENT, AASSIGNMENT, DASSIGNMENT, ENTERGRADE, PASSWORD, LOGOUT} //gives access to certain actions that teachers are allowed to use
 
     /**
      * Creates an instance of the Application class, which is responsible for interacting
