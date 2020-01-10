@@ -108,13 +108,13 @@ else {
     public boolean requestSelectionLoop(User user) {
     	if (user.isAdministrator()) { //presents options available if administrator is logged in
     		switch(getAdminSelection()) {
-    			case FACULTY:
+    			case FACULTY: //allows the administrator to view a full list of the faculty registered in powerschool
     				((Administrator) user).viewFaculty();
     				return true;
-    			case FACULTYBYDEPT:
+    			case FACULTYBYDEPT: //allows the administrator to select a specific department and see which faculty members are registered in that department
     				((Administrator) user).viewFacultyByDept(in);
     				return true;
-    			case STUDENT:
+    			case STUDENT: //allows the administrator to view a full list of all students registered in powerschool
     				((Administrator) user).viewStudentEnrollment();
     				return true;
     			case STUDENTBYGRADE:
