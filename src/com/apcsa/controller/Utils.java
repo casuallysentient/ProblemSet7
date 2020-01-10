@@ -6,8 +6,8 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.ResultSet;//a table of data created out of specified selected parts of a database
+import java.sql.SQLException;//signals the failure of a SQL operation
 import java.util.ArrayList; //a resizeable array that can be used to store an uncertain number of objects, which is not natively available in java
 import java.util.InputMismatchException; //thrown by a scanner in the event that the user enters an unexpected data type (for example, the word "banana" entered as a nextInt())
 import java.util.Scanner; //allows program to accept user input
