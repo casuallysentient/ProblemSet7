@@ -133,13 +133,13 @@ else {
 
       else if (user.isTeacher()) { //presents options available if teacher is logged in
     		switch(getTeacherSelection()) {
-				case ENROLLMENT:
+				case ENROLLMENT: //allows the teacher to enroll a new student in their class
 					((Teacher) user).enrollment(in);
 					return true;
-				case AASSIGNMENT:
+				case AASSIGNMENT: //allows the teacher to add an assignment to their course
 					((Teacher) user).addAssignment(in);
 					return true;
-				case DASSIGNMENT:
+				case DASSIGNMENT: //allows the teacher to delete an assignment from their course
 					((Teacher) user).deleteAssignment(in);
 					return true;
 				case ENTERGRADE:
