@@ -321,7 +321,7 @@ else {
      */
 
     public boolean isFirstLogin() {
-        return activeUser.getLastLogin().equals("0000-00-00 00:00:00.000");
+        return activeUser.getLastLogin().equals("0000-00-00 00:00:00.000"); //if it is the user's first login, their last login time does not exist, so it is marked as midnight before January 1, year 0.
     }
 
     /////// MAIN METHOD ///////////////////////////////////////////////////////////////////
@@ -333,7 +333,7 @@ else {
      */
 
     public static void main(String[] args) {
-        Application app = new Application();
+        Application app = new Application(); //creates a new instance of the application being run
 
         app.startup();
     }
