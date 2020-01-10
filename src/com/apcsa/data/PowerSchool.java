@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import com.apcsa.controller.Utils;
 import com.apcsa.model.Administrator;
@@ -33,15 +34,15 @@ public class PowerSchool {
 
     public static void initialize(boolean force) {
         if (force) {
-            reset();    // force reset
+            reset(); // force reset
         } else {
             boolean required = false;
 
             // check if all tables have been created and loaded in database
 
             try (Connection conn = getConnection();
-                 Statement stmt = conn.createStatement();
-                 ResultSet rs = stmt.executeQuery(QueryUtils.SETUP_SQL)) {
+                    Statement stmt = conn.createStatement();
+                    ResultSet rs = stmt.executeQuery(QueryUtils.SETUP_SQL)) {
 
                 while (rs.next()) {
                     if (rs.getInt("names") != 9) {
@@ -60,6 +61,7 @@ public class PowerSchool {
         }
     }
 
+
     /**
      * Retrieves the User object associated with the requested login.
      *
@@ -69,8 +71,7 @@ public class PowerSchool {
      */
 
     public static User login(String username, String password) {
-        try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(QueryUtils.LOGIN_SQL)) {
+        try (Connection conn = getConnection(); PreparedStatement stmt = conn.prepareStatement(QueryUtils.LOGIN_SQL)) {
 
             stmt.setString(1, username);
             stmt.setString(2, Utils.getHash(password));
@@ -83,7 +84,6 @@ public class PowerSchool {
                     if (affected != 1) {
                         System.err.println("Unable to update last login (affected rows: " + affected + ").");
                     }
-
                     return new User(rs);
                 }
             }
@@ -103,7 +103,7 @@ public class PowerSchool {
 
     public static User getAdministrator(User user) {
         try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_ADMIN_SQL)) {
+                PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_ADMIN_SQL)) {
 
             stmt.setInt(1, user.getUserId());
 
@@ -128,7 +128,7 @@ public class PowerSchool {
 
     public static User getTeacher(User user) {
         try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_TEACHER_SQL)) {
+                PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_TEACHER_SQL)) {
 
             stmt.setInt(1, user.getUserId());
 
@@ -153,7 +153,7 @@ public class PowerSchool {
 
     public static User getStudent(User user) {
         try (Connection conn = getConnection();
-             PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_STUDENT_SQL)) {
+                PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_STUDENT_SQL)) {
 
             stmt.setInt(1, user.getUserId());
 
@@ -169,6 +169,51 @@ public class PowerSchool {
         return user;
     }
 
+
+
+    public static ArrayList<Teacher> getFaculty() {
+        ArrayList<Teacher> faculty = new ArrayList<Teacher>();
+
+         try (Connection conn = getConnection()) {
+            PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_FACULTY);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    faculty.add(new Teacher(rs));
+                }
+            }
+         }
+
+         catch (SQLException e) {
+             System.out.println(e);
+         }
+
+         return faculty;
+     }
+
+
+    public static ArrayList<Student> getStudents() {
+        ArrayList<Student> students = new ArrayList<Student>();
+
+        try (Connection conn = getConnection()) {
+            PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_STUDENTS);
+
+            try (ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    students.add(new Student(rs));
+                }
+            }
+         }
+
+         catch (SQLException e) {
+             System.out.println(e);
+         }
+
+         return students;
+    }
+
+
+
     /*
      * Establishes a connection to the database.
      *
@@ -176,7 +221,7 @@ public class PowerSchool {
      * @throws SQLException
      */
 
-    private static Connection getConnection() throws SQLException {
+    public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(PROTOCOL + DATABASE_URL);
     }
 
@@ -210,6 +255,31 @@ public class PowerSchool {
 
             return -1;
         }
+    }
+
+    public static int updatePassword(Connection conn, String username, String hashedPassword) {
+    	try (PreparedStatement stmt = conn.prepareStatement(QueryUtils.UPDATE_PASSWORD_SQL)) {
+
+        	stmt.setString(1, hashedPassword);
+        	stmt.setString(2, username);
+        	conn.setAutoCommit(false);
+        	if (stmt.executeUpdate() == 1) {
+        		conn.commit();
+
+        		return 1;
+        	}
+
+          else {
+        		conn.rollback();
+
+        		return -1;
+        	}
+        }
+
+        catch (SQLException e) {
+			e.printStackTrace();
+			return -1;
+		}
     }
 
     /*
@@ -248,5 +318,9 @@ public class PowerSchool {
             System.err.println("Error: Unable to execute SQL script from configuration file.");
             e.printStackTrace();
         }
+    }
+
+    public static boolean isResultSetEmpty(ResultSet resultSet) throws SQLException {
+        return !resultSet.first();
     }
 }

@@ -3,12 +3,14 @@ package com.apcsa.model;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.apcsa.controller.Utils;
+
 public class User {
 
     private int userId;
     private String accountType;
     private String username;
-    private String password;
+    protected String password;
     private String lastLogin;
 
     /**
@@ -44,6 +46,14 @@ public class User {
         this.lastLogin = lastLogin;
     }
 
+    public User(User user) {
+        this.userId = user.getUserId();
+        this.accountType = user.getAccountType().toLowerCase();
+        this.username = user.getUsername();
+        this.password = user.getPassword();
+        this.lastLogin = user.getLastLogin();
+    }
+
     /**
      * @return userId
      */
@@ -74,6 +84,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public void setPassword(String password) {
+    	this.password = password;
     }
 
     /**
