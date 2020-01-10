@@ -38,8 +38,7 @@ public class Application {
     public void startup() {
         System.out.println("PowerSchool -- now for students, teachers, and school administrators!"); // welcome message, this will print as soon as the program is started
 
-        boolean login = false;
-
+        boolean login = false; //creates a boolean that will be used to confirm whether or not a user is logged in at the time
         // continuously prompt for login credentials and attempt to login
 
         while (true) {
@@ -86,7 +85,7 @@ else {
     private void firstTimePassword() {
     	System.out.print("\nAs a new user, you must change your password. \n\nEnter your new password: "); //printed the first time a user logs in for security purposes so that as soon as they begin to use their account, they are able to be sure that no one else knows their password
         String tempPassword = in.next(); //this is the line where the user actually enters the password
-		String hashedPassword = Utils.getHash(tempPassword);
+		String hashedPassword = Utils.getHash(tempPassword); //creates a hash of the user's newly entered password that the program can then read
 		activeUser.setPassword(hashedPassword);
 
         try {
