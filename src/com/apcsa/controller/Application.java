@@ -142,13 +142,13 @@ else {
 				case DASSIGNMENT: //allows the teacher to delete an assignment from their course
 					((Teacher) user).deleteAssignment(in);
 					return true;
-				case ENTERGRADE:
+				case ENTERGRADE://allows the teacher to enter a grade for an assignment for a specific student
 					((Teacher) user).enterGrade(in);
 					return true;
-				case PASSWORD:
+				case PASSWORD://allows the teacher to change their password
                     ((Teacher) user).changePassword(in);
                     return true;
-				case LOGOUT:
+				case LOGOUT://allows the teacher to log out
 					return false;
 			}
     	}
