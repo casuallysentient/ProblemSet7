@@ -8,8 +8,8 @@ import java.io.IOException; //signals the failure of any I/O operation
 import java.sql.Connection; //enables the program to connect to the database and access information from it
 import java.sql.DriverManager; //enables the program to load JDBC drivers
 import java.sql.PreparedStatement; //enables the program to create pre-compiled SQL statements - especially important for this because it must regularly add and delete information from the database
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.ResultSet; //a table of data created out of specified selected parts of a database
+import java.sql.SQLException; //signals the failure of a SQL operation
 import java.sql.Statement;
 import java.sql.Timestamp;
 import java.util.ArrayList;
