@@ -63,7 +63,7 @@ public class Utils {
     }
 
 
-    public static boolean confirm(Scanner in, String message) {
+    public static boolean confirm(Scanner in, String message) { //teaches system how to respond in the case of yes/no responses in the way this system is designed (where the user must type y or n to confirm or deny, respectively - non-case-sensitive)
         String response = "";
 
         while (!response.equals("y") && !response.equals("n")) {
@@ -74,11 +74,11 @@ public class Utils {
         return response.equals("y");
     }
 
-    public static int generateAssignmentId() { //automatically creates an ID whenever an assignment is created by a teacher so that there aren't any errors of multiple grades appearing for one assignment 
+    public static int generateAssignmentId() { //automatically creates an ID whenever an assignment is created by a teacher so that there aren't any errors of multiple grades appearing for one assignment
         ArrayList<Integer> ids = new ArrayList<Integer>();
 
         try (Connection conn = PowerSchool.getConnection()) {
-            PreparedStatement stmt = conn.prepareStatement("SELECT assignment_id FROM assignments");
+            PreparedStatement stmt = conn.prepareStatement("SELECT assignment_id FROM assignments"); //adds a line of SQL that accesses newly created assignment in database
 
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
@@ -102,7 +102,7 @@ public class Utils {
         return -1;
     }
 
-    private static double round(double value, int places) {
+    private static double round(double value, int places) { //rounds grade values with more than 2 decimal points to 2 decimal points for sake of simplicity
         return new BigDecimal(Double.toString(value))
             .setScale(places, RoundingMode.HALF_UP)
             .doubleValue();
