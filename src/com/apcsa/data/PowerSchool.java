@@ -17,8 +17,8 @@ import java.util.Date; //allows the program to access the date class, which can 
 import com.apcsa.controller.Utils; //imports objects created in Utils file so they can be used here
 import com.apcsa.model.Administrator; //imports objects created in Administrator file so they can be used here
 import com.apcsa.model.Student; //imports objects created in Student file so they can be used here
-import com.apcsa.model.Teacher;
-import com.apcsa.model.User;
+import com.apcsa.model.Teacher; //imports objects created in Teacher file so they can be used here
+import com.apcsa.model.User; //imports objects created in User file so they can be used here
 
 public class PowerSchool { //this object is the connector between the surface-level Application file, which the user directly interacts with, and the database. It is through here that information is accessed and modified.
 
