@@ -14,8 +14,8 @@ import java.sql.Statement; //used to execute a static SQL statement
 import java.sql.Timestamp; //allows the JDBC API to recognize java dates as SQL TIMESTAMP values
 import java.util.ArrayList;//a resizeable array that can be used to store an uncertain number of objects, which is not natively available in java
 import java.util.Date; //allows the program to access the date class, which can be used to specify a time, down to the millisecond
-import com.apcsa.controller.Utils;
-import com.apcsa.model.Administrator;
+import com.apcsa.controller.Utils; //imports objects created in Utils file so they can be used here
+import com.apcsa.model.Administrator; //imports objects created in Administrator file so they can be used here
 import com.apcsa.model.Student;
 import com.apcsa.model.Teacher;
 import com.apcsa.model.User;
