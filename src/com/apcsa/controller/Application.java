@@ -56,8 +56,8 @@ public class Application {
                 //following section checks to see what type of user is logged in by calling different functions that check the user type - administrator, teacher, or student
                 activeUser = activeUser.isAdministrator() //by default, the program first checks to see if the user is an administrator
                     ? PowerSchool.getAdministrator(activeUser) : activeUser.isTeacher() //if the user is not an administrator, the program checks to see if they are a teacher
-                    ? PowerSchool.getTeacher(activeUser) : activeUser.isStudent()
-                    ? PowerSchool.getStudent(activeUser) : activeUser.isRoot()
+                    ? PowerSchool.getTeacher(activeUser) : activeUser.isStudent()//if the user is not a teacher, the program checks to see if they are a student
+                    ? PowerSchool.getStudent(activeUser) : activeUser.isRoot()//if the user is not a student, the program checks to see if it is the root account
                     ? activeUser : null;
 
                 if (isFirstLogin() && !activeUser.isRoot()) {
