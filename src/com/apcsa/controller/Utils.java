@@ -1,7 +1,7 @@
 package com.apcsa.controller;
 
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
+import java.security.MessageDigest;//provides functionality of messagedigest algorithm, allowing program to take arbitrarily-sized data and return a fixed-length hash value
+import java.security.NoSuchAlgorithmException; //throws an error when the program attempts to call an algorithm that does not exist
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.sql.Connection; //enables the program to connect to the database and access information from it
