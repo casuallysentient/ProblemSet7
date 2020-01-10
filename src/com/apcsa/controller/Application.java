@@ -196,7 +196,7 @@ else {
 				System.out.println("\nYour input was invalid. Please try again.\n");
 			}
 
-			in.nextLine();
+			in.nextLine(); //creates an input field where the administrator can select which option they would like to use
 		}
 
     while (output < 1 || output > 7);
@@ -240,7 +240,7 @@ else {
 				System.out.println("\nYour input was invalid. Please try again.\n");
 			}
 
-			in.nextLine();
+			in.nextLine(); //creates an input field where the student can select which option they would like to use
     	}
 
       while (output < 1 || output > 4);
