@@ -2,8 +2,8 @@ package com.apcsa.controller;
 
 import com.apcsa.data.*; //imports the files contained within the data folder so that this file is able to use the data contained within the database
 import com.apcsa.model.*; //imports the files contained within the model folder so that this file is able to connect to the pre-coded aspects of the system
-import java.sql.*;
-import java.util.*;
+import java.sql.*; //imports SQL to allow this file to actually communicate with the database
+import java.util.*; //imports the utilities that will be used throughout this file
 
 public class Application {
 
