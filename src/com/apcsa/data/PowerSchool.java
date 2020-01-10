@@ -1,7 +1,7 @@
 package com.apcsa.data;
 //imports all necessarily built-in java utilities that will be used throughout the system
-import java.io.BufferedReader;
-import java.io.File;
+import java.io.BufferedReader; //enables the program to read user input without decreasing program efficiency
+import java.io.File; //abstract -- essentially just teaches the program how to interact with the directory 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
