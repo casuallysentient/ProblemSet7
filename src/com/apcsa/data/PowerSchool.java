@@ -12,8 +12,8 @@ import java.sql.ResultSet; //a table of data created out of specified selected p
 import java.sql.SQLException; //signals the failure of a SQL operation
 import java.sql.Statement; //used to execute a static SQL statement
 import java.sql.Timestamp; //allows the JDBC API to recognize java dates as SQL TIMESTAMP values
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.ArrayList;//a resizeable array that can be used to store an uncertain number of objects, which is not natively available in java
+import java.util.Date; //allows the program to access the date class, which can be used to specify a time, down to the millisecond
 import com.apcsa.controller.Utils;
 import com.apcsa.model.Administrator;
 import com.apcsa.model.Student;
