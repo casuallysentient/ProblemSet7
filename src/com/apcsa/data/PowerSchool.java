@@ -16,11 +16,11 @@ import java.util.ArrayList;//a resizeable array that can be used to store an unc
 import java.util.Date; //allows the program to access the date class, which can be used to specify a time, down to the millisecond
 import com.apcsa.controller.Utils; //imports objects created in Utils file so they can be used here
 import com.apcsa.model.Administrator; //imports objects created in Administrator file so they can be used here
-import com.apcsa.model.Student;
+import com.apcsa.model.Student; //imports objects created in Student file so they can be used here
 import com.apcsa.model.Teacher;
 import com.apcsa.model.User;
 
-public class PowerSchool {
+public class PowerSchool { //this object is the connector between the surface-level Application file, which the user directly interacts with, and the database. It is through here that information is accessed and modified.
 
     private final static String PROTOCOL = "jdbc:sqlite:";
     private final static String DATABASE_URL = "data/powerschool.db";//defines path to database
