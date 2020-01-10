@@ -101,7 +101,7 @@ public class PowerSchool { //this object is the connector between the surface-le
      * @return the administrator account if it exists
      */
 
-    public static User getAdministrator(User user) {
+    public static User getAdministrator(User user) { //used to access an administrator's row in the database when logging into their account
         try (Connection conn = getConnection();
                 PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_ADMIN_SQL)) {
 
@@ -171,7 +171,7 @@ public class PowerSchool { //this object is the connector between the surface-le
 
 
 
-    public static ArrayList<Teacher> getFaculty() {
+    public static ArrayList<Teacher> getFaculty() { //creates an array of all the teachers currently registered in powerschool, which will then be displayed on the user's screen
         ArrayList<Teacher> faculty = new ArrayList<Teacher>();
 
          try (Connection conn = getConnection()) {
@@ -192,7 +192,7 @@ public class PowerSchool { //this object is the connector between the surface-le
      }
 
 
-    public static ArrayList<Student> getStudents() {
+    public static ArrayList<Student> getStudents() { //creates an array of all the students currently registered in powerschool, which will then be displayed on the user's screen
         ArrayList<Student> students = new ArrayList<Student>();
 
         try (Connection conn = getConnection()) {
