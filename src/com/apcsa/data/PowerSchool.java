@@ -126,7 +126,7 @@ public class PowerSchool { //this object is the connector between the surface-le
      * @return the teacher account if it exists
      */
 
-    public static User getTeacher(User user) {
+    public static User getTeacher(User user) {//used to access a teacher's row in the database when logging into their account
         try (Connection conn = getConnection();
                 PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_TEACHER_SQL)) {
 
@@ -151,7 +151,7 @@ public class PowerSchool { //this object is the connector between the surface-le
      * @return the student account if it exists
      */
 
-    public static User getStudent(User user) {
+    public static User getStudent(User user) {//used to access a student's row in the database when logging into their account
         try (Connection conn = getConnection();
                 PreparedStatement stmt = conn.prepareStatement(QueryUtils.GET_STUDENT_SQL)) {
 
