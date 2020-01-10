@@ -68,7 +68,7 @@ public class Application {
                 System.out.printf("\nHello again, %s!\n", activeUser.getFirstName());
 
                 while (login) {
-                	login = this.requestSelectionLoop(activeUser);
+                	login = this.requestSelectionLoop(activeUser); //calls function requestSelectionLoop, which ensures that every time a user has finished with a specific activity, they are able to see all of the available activities again until they log out
                 }
             }
 else {
@@ -77,7 +77,7 @@ else {
                // remember, the interface will be difference depending on the type
                // of user that is logged in (root, administrator, teacher, student)
 
-                System.out.println("\nInvalid username and/or password.");
+                System.out.println("\nInvalid username and/or password."); //to be printed in the case that the username and/or password entered do not match up to a user registered in powerschool
             }
         }
     }
@@ -96,7 +96,7 @@ else {
 				System.out.println("\nSuccess!");
 			}
       else if (success == -1) {
-				System.out.println("Something went wrong.");
+				System.out.println("Something went wrong."); //printed if an error occurs within the system and, for whatever reason, the system is unable to change the password
 			}
 		}
     catch (SQLException e) {
