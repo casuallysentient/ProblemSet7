@@ -36,7 +36,7 @@ public class Application {
      */
 
     public void startup() {
-        System.out.println("PowerSchool -- now for students, teachers, and school administrators!");
+        System.out.println("PowerSchool -- now for students, teachers, and school administrators!"); // welcome message, this will print as soon as the program is started
 
         boolean login = false;
 
@@ -51,8 +51,9 @@ public class Application {
 
             // if login is successful, update generic user to administrator, teacher, or student
 
-            if (login(username, password)) {
-            	login = true;
+            if (login(username, password)) { //checks that the login is valid
+            	login = true; //confirms that a user has logged in
+                //following section checks to see what type of user is logged in by calling different functions that check the user type - administrator, teacher, or student
                 activeUser = activeUser.isAdministrator()
                     ? PowerSchool.getAdministrator(activeUser) : activeUser.isTeacher()
                     ? PowerSchool.getTeacher(activeUser) : activeUser.isStudent()
