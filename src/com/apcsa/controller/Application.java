@@ -181,7 +181,7 @@ else {
 
     public AdminAction getAdminSelection() {
     	int output = 0;
-		do {
+		do { //prints out the labels for all available actions for the administrator
 			System.out.println("\n[1] View faculty.");
 			System.out.println("[2] View faculty by department.");
 			System.out.println("[3] View student enrollment.");
@@ -228,7 +228,7 @@ else {
     public StudentAction getStudentSelection() {
     	int output = 0;
 
-    	do {
+    	do { //prints out all of the available actions for the student
     		System.out.println("\n[1] View course grades.");
 			System.out.println("[2] View assignment grades by course.");
 			System.out.println("[3] Change password.");
@@ -264,7 +264,7 @@ else {
 
 	public TeacherAction getTeacherSelection() {
 		int output = -1;
-		do {
+		do { //prints out all of the available options for the teacher
 			System.out.println("\n[1] View enrollment by course.");
 			System.out.println("[2] Add assignment.");
 			System.out.println("[3] Delete assignment.");
