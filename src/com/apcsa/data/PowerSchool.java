@@ -79,7 +79,7 @@ public class PowerSchool {
             try (ResultSet rs = stmt.executeQuery()) {
                 if (rs.next()) {
                     Timestamp ts = new Timestamp(new Date().getTime()); //marks the time that the user logs in so they can check when the last time they logged in was
-                    int affected = PowerSchool.updateLastLogin(conn, username, ts);
+                    int affected = PowerSchool.updateLastLogin(conn, username, ts); //calls the function that will actually change the last login time
 
                     if (affected != 1) {
                         System.err.println("Unable to update last login (affected rows: " + affected + ")."); //error message thrown in the event that the program can not update the user's last login
@@ -234,7 +234,7 @@ public class PowerSchool {
      * @return the number of affected rows
      */
 
-    private static int updateLastLogin(Connection conn, String username, Timestamp ts) {
+    private static int updateLastLogin(Connection conn, String username, Timestamp ts) { //called every time the user logs in so as to keep track of any unathorized access of their account
         try (PreparedStatement stmt = conn.prepareStatement(QueryUtils.UPDATE_LAST_LOGIN_SQL)) {
 
             conn.setAutoCommit(false);
