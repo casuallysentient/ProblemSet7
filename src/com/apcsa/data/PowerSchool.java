@@ -257,8 +257,8 @@ public class PowerSchool {
         }
     }
 
-    public static int updatePassword(Connection conn, String username, String hashedPassword) {
-    	try (PreparedStatement stmt = conn.prepareStatement(QueryUtils.UPDATE_PASSWORD_SQL)) {
+    public static int updatePassword(Connection conn, String username, String hashedPassword) { //called when the user selects the option to change their password
+    	try (PreparedStatement stmt = conn.prepareStatement(QueryUtils.UPDATE_PASSWORD_SQL)) { //calls pre-compiled SQL statement with specific case examples filled in in order to modify the password in only that user's row in the database
 
         	stmt.setString(1, hashedPassword);
         	stmt.setString(2, username);
