@@ -10,8 +10,8 @@ public class Application {
   private Scanner in;
   private User activeUser;
 
-  enum RootAction { PASSWORD, DATABASE, LOGOUT, SHUTDOWN }
-  enum StudentAction { GRADES, GRADESBYCOURSE, PASSWORD, LOGOUT }
+  enum RootAction { PASSWORD, DATABASE, LOGOUT, SHUTDOWN } //gives access to certain actions that the root account is allowed to use
+  enum StudentAction { GRADES, GRADESBYCOURSE, PASSWORD, LOGOUT } //gives access to certain actions that students are allowed to use
 	enum AdminAction { FACULTY, FACULTYBYDEPT, STUDENT, STUDENTBYGRADE, STUDENTBYCOURSE, PASSWORD, LOGOUT }
 	enum TeacherAction { ENROLLMENT, AASSIGNMENT, DASSIGNMENT, ENTERGRADE, PASSWORD, LOGOUT}
 
