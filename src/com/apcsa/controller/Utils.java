@@ -8,8 +8,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
+import java.util.ArrayList; //a resizeable array that can be used to store an uncertain number of objects, which is not natively available in java
+import java.util.InputMismatchException; //thrown by a scanner in the event that the user enters an unexpected data type (for example, the word "banana" entered as a nextInt())
 import java.util.Scanner; //allows program to accept user input
 import com.apcsa.data.PowerSchool; //imports data from powerschool file so the objects created elsewhere can be used here
 
