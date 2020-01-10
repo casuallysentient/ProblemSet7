@@ -155,10 +155,10 @@ else {
 
       else if (user.isStudent()) { //presents options available if student is logged in
     		switch(getStudentSelection()) {
-    			case GRADES:
+    			case GRADES://allows student to see a list of their overall grades
     				((Student) user).viewCourseGrades();
     				return true;
-    			case GRADESBYCOURSE:
+    			case GRADESBYCOURSE://allows student to enter a specific course and see their assignment grades in that course
     				((Student) user).viewAssignmentGradesByCourse(in);
     				return true;
     			case PASSWORD:
