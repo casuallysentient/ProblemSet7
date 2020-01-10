@@ -54,8 +54,8 @@ public class Application {
             if (login(username, password)) { //checks that the login is valid
             	login = true; //confirms that a user has logged in
                 //following section checks to see what type of user is logged in by calling different functions that check the user type - administrator, teacher, or student
-                activeUser = activeUser.isAdministrator()
-                    ? PowerSchool.getAdministrator(activeUser) : activeUser.isTeacher()
+                activeUser = activeUser.isAdministrator() //by default, the program first checks to see if the user is an administrator
+                    ? PowerSchool.getAdministrator(activeUser) : activeUser.isTeacher() //if the user is not an administrator, the program checks to see if they are a teacher
                     ? PowerSchool.getTeacher(activeUser) : activeUser.isStudent()
                     ? PowerSchool.getStudent(activeUser) : activeUser.isRoot()
                     ? activeUser : null;
