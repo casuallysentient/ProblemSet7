@@ -86,13 +86,13 @@ else {
     	System.out.print("\nAs a new user, you must change your password. \n\nEnter your new password: "); //printed the first time a user logs in for security purposes so that as soon as they begin to use their account, they are able to be sure that no one else knows their password
         String tempPassword = in.next(); //this is the line where the user actually enters the password
 		String hashedPassword = Utils.getHash(tempPassword); //creates a hash of the user's newly entered password that the program can then read
-		activeUser.setPassword(hashedPassword);
+		activeUser.setPassword(hashedPassword); //attempts to set the password to the newly entered password created by the user by means of the hash that the program is reading
 
         try {
 			Connection conn = PowerSchool.getConnection();
 			int success = PowerSchool.updatePassword(conn, activeUser.getUsername(), hashedPassword);
 			if (success == 1) {
-				System.out.println("\nSuccess!");
+				System.out.println("\nSuccess!"); //success message printed if the password has successfully changed
 			}
       else if (success == -1) {
 				System.out.println("Something went wrong."); //printed if an error occurs within the system and, for whatever reason, the system is unable to change the password
