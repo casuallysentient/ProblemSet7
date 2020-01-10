@@ -6,8 +6,8 @@ import java.io.FileNotFoundException; //allows the program to signal when it is 
 import java.io.FileReader; //allows the program to read data from a file
 import java.io.IOException; //signals the failure of any I/O operation
 import java.sql.Connection; //enables the program to connect to the database and access information from it
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import java.sql.DriverManager; //enables the program to load JDBC drivers
+import java.sql.PreparedStatement; //enables the program to create pre-compiled SQL statements - especially important for this because it must regularly add and delete information from the database
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
