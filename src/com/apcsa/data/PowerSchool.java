@@ -4,8 +4,8 @@ import java.io.BufferedReader; //enables the program to read user input without 
 import java.io.File; //abstract -- essentially just teaches the program how to interact with the directory
 import java.io.FileNotFoundException; //allows the program to signal when it is unable to find a specified file
 import java.io.FileReader; //allows the program to read data from a file
-import java.io.IOException;
-import java.sql.Connection;
+import java.io.IOException; //signals the failure of any I/O operation
+import java.sql.Connection; //enables the program to connect to the database and access information from it
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
