@@ -74,7 +74,7 @@ public class Utils {
         return response.equals("y");
     }
 
-    public static int generateAssignmentId() {
+    public static int generateAssignmentId() { //automatically creates an ID whenever an assignment is created by a teacher so that there aren't any errors of multiple grades appearing for one assignment 
         ArrayList<Integer> ids = new ArrayList<Integer>();
 
         try (Connection conn = PowerSchool.getConnection()) {

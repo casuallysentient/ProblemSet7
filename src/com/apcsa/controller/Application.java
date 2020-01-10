@@ -84,8 +84,8 @@ else {
 
 
     private void firstTimePassword() {
-    	System.out.print("\nAs a new user, you must change your password. \n\nEnter your new password: ");
-        String tempPassword = in.next();
+    	System.out.print("\nAs a new user, you must change your password. \n\nEnter your new password: "); //printed the first time a user logs in for security purposes so that as soon as they begin to use their account, they are able to be sure that no one else knows their password
+        String tempPassword = in.next(); //this is the line where the user actually enters the password
 		String hashedPassword = Utils.getHash(tempPassword);
 		activeUser.setPassword(hashedPassword);
 
