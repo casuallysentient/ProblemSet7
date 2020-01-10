@@ -202,7 +202,7 @@ else {
 
     while (output < 1 || output > 7);
 
-		switch(output) {
+		switch(output) {//switch statement that actually calls the previously written actions based on the administrator's response
 			case 1:
 				return AdminAction.FACULTY;
 			case 2:
@@ -246,7 +246,7 @@ else {
 
       while (output < 1 || output > 4);
 
-    	switch(output) {
+    	switch(output) {//switch statement that actually calls the previously written actions based on the student's response
     		case 1:
     			return StudentAction.GRADES;
     		case 2:
@@ -282,7 +282,7 @@ else {
 		}
      while (output > 6 || output < 1);
 
-		switch(output) {
+		switch(output) {//switch statement that actually calls the previously written actions based on the teacher's response
 			case 1:
 				return TeacherAction.ENROLLMENT;
 			case 2:
